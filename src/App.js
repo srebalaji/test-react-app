@@ -10,14 +10,13 @@ class App extends Component {
     this.state = {};
   }
 
-  componentDidMount() {
+  componentWillMount() {
     this.Apicall();
   }
 
   Apicall() {
     axios.get('https://api.github.com/users/srebalaji')
       .then(res => {
-        debugger
         this.setState(res.data);
       });
   }
